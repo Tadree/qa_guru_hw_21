@@ -1,6 +1,7 @@
 package ru.jiehk.tests;
 
 import io.appium.java_client.AppiumBy;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -13,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 public class WikipediaTests extends TestBase {
 
     @Test
+    @Tag("android")
     void successfulSearchTest() {
         step("Ввод поискового запроса", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
@@ -24,6 +26,7 @@ public class WikipediaTests extends TestBase {
     }
 
     @Test
+    @Tag("android")
     void errorPageTest() {
         step("Переход в статью с главной страницы", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/view_featured_article_card_article_title")).click();
