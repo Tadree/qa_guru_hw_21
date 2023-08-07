@@ -63,3 +63,10 @@ task ios_test(type: Test) {
         includeTags("ios")
     }
 }
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
