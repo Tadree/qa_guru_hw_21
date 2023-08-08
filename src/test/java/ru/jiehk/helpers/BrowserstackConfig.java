@@ -2,7 +2,9 @@ package ru.jiehk.helpers;
 
 import org.aeonbits.owner.Config;
 
-@BrowserstackConfig.Sources({
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "classpath:config/base.properties",
         "classpath:config/${env}.properties"
 })
 public interface BrowserstackConfig extends Config {
